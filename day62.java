@@ -7,22 +7,24 @@ public class day62 {
 	public static void main(String[] args) {
 
 
-		int num=0,reversed=0;
+		int num=0;
 		Scanner reader = new Scanner(System.in);
-		System.out.println("Enter a number : ");
+		System.out.println("enter a number : ");
 		num = reader.nextInt();
-	  
-	    while(num != 0) {
-	    
-	      
-	      int reminder = num % 10;
-	      reversed = reversed * 10 + reminder;
-
+	   
+	    boolean flag = false;
+		for (int i = 2; i <= num / 2; ++i) {
 	     
-	      num /= 10;
+	      if (num % i == 0) {
+	        flag = true;
+	        break;
+	      }
 	    }
 
-	    System.out.println("Reversed Number: " + reversed);
+	    if (!flag)
+	      System.out.println(num + " is a prime number.");
+	    else
+	      System.out.println(num + " is not a prime number.");
 	  }
 
 	}
