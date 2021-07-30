@@ -7,18 +7,23 @@ public class day62 {
 	public static void main(String[] args) {
 
 
-		int n = 10, firstTerm = 0, secondTerm = 1;
-	    System.out.println("Fibonacci Series till " + n + " terms:");
+		int num=0,reversed=0;
+		Scanner reader = new Scanner(System.in);
+		System.out.println("Enter a number : ");
+		num = reader.nextInt();
+	  
+	    while(num != 0) {
+	    
+	      
+	      int reminder = num % 10;
+	      reversed = reversed * 10 + reminder;
 
-	    for (int i = 1; i <= n; ++i) {
-	      System.out.print(firstTerm + ", ");
+	     
+	      num /= 10;
+	    }
 
-	      // compute the next term
-	      int nextTerm = firstTerm + secondTerm;
-	      firstTerm = secondTerm;
-	      secondTerm = nextTerm;
-	    }	
+	    System.out.println("Reversed Number: " + reversed);
+	  }
 
 	}
-}
 
